@@ -17,13 +17,33 @@ const WHATSAPP_LINK =
   "https://wa.me/" + WHATSAPP_NUMERO + "?text=" + encodeURIComponent(WHATSAPP_MENSAGEM);
 
 /* -------------------------------------------------------------------------
-   Aplica o link em todos os botões/links com a classe ".js-whatsapp"
-   e garante abertura em nova aba com segurança.
+   📊 CONVERSÃO DO GOOGLE ADS (CLIQUE WPP)
+   Identificador do evento de conversão (rótulo). Para trocar, edite aqui.
+   A tag base (AW-18275338840) fica no <head> do index.html.
+   ------------------------------------------------------------------------- */
+const GADS_CONVERSAO_SEND_TO = "AW-18275338840/xf7WCNXtn8YcENiUropE";
+
+/* Dispara o evento de conversão no Google Ads (sem redirecionar:
+   o link do WhatsApp continua abrindo normalmente em nova aba). */
+function reportarConversaoWhatsApp() {
+  if (typeof gtag === "function") {
+    gtag("event", "conversion", {
+      send_to: GADS_CONVERSAO_SEND_TO,
+      value: 1.0,
+      currency: "BRL"
+    });
+  }
+}
+
+/* -------------------------------------------------------------------------
+   Aplica o link em todos os botões/links com a classe ".js-whatsapp",
+   garante abertura em nova aba com segurança e registra a conversão no clique.
    ------------------------------------------------------------------------- */
 document.querySelectorAll(".js-whatsapp").forEach(function (el) {
   el.setAttribute("href", WHATSAPP_LINK);
   el.setAttribute("target", "_blank");
   el.setAttribute("rel", "noopener");
+  el.addEventListener("click", reportarConversaoWhatsApp);
 });
 
 /* -------------------------------------------------------------------------
