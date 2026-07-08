@@ -10,7 +10,7 @@
    • WHATSAPP_MENSAGEM: texto que já vem digitado quando o cliente abre a conversa.
    ------------------------------------------------------------------------- */
 const WHATSAPP_NUMERO   = "5561994431731";
-const WHATSAPP_MENSAGEM = "Olá, vi seus serviços e quero mais informações.";
+const WHATSAPP_MENSAGEM = "Olá, fiquei interessada e quero agendar um teste de mecha.";
 
 /* Monta o link final do WhatsApp (não precisa editar). */
 const WHATSAPP_LINK =
