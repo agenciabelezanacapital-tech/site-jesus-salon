@@ -49,7 +49,7 @@ Dimensões recomendadas:
 
 - **Endereço / horário:** no `index.html`, seção `Localização` (procure por `id="localizacao"`).
 - **Mapa do Google:** na mesma seção, troque o `src` do `<iframe>` pelo código "Incorporar um mapa" do Google Maps.
-- **Redes sociais:** adicionar somente depois de confirmar os perfis oficiais.
+- **Redes sociais:** perfis oficiais do salão e do Laécio publicados no rodapé.
 - **Domínio (SEO):** ao publicar, troque `https://www.jesussalon.com.br/` pelo domínio real em `index.html` (tags canonical/OG e JSON-LD), `robots.txt` e `sitemap.xml`.
 
 ---
@@ -77,6 +77,8 @@ ativação, `/api/reviews` deve retornar HTTP 200, `available: true`, `rating`, 
 e `updatedAt`; verificar a data na página. A implementação não comprova recebimento
 da conversão no painel Google Ads; isso requer teste no Tag Assistant/conta de Ads.
 
-Pendências externas: confirmar Instagram oficial (o perfil @jesussalon consultado
-não identifica o salão), Meta Pixel específico, credenciais Google para a integração
+Perfis oficiais confirmados pelo cliente: https://www.instagram.com/jesussalonn/
+(salão) e https://www.instagram.com/laeciodejesus_/ (Laécio de Jesus).
+
+Pendências externas: Meta Pixel específico, credenciais Google para a integração
 e atualizar o site no Google Business Profile, ainda apontado ao Carrd no levantamento.
