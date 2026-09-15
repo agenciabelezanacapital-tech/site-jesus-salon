@@ -622,3 +622,6 @@ em { font-style: italic; color: var(--dourado); }
 @media (prefers-reduced-motion: reduce) {
   * { animation: none !important; scroll-behavior: auto !important; transition: none !important; }
 }
+
+.review-update { text-align:center; margin:24px auto 0; font-size:.8rem; color:var(--texto-suave); }
+.testimonial small { display:block; margin-top:8px; }

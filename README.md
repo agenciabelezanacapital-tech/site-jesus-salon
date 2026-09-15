@@ -56,3 +56,27 @@ Dimensões recomendadas:
 
 ## ✅ Já incluso
 SEO técnico (meta tags, Open Graph, Twitter Card, JSON-LD `HairSalon` com nota 5,0 / 66 avaliações), HTML semântico, design responsivo (mobile-first, ok em 360px), botão flutuante de WhatsApp com animação, e múltiplos CTAs ao longo da página.
+
+
+## Atualização de avaliações (15/09/2026)
+
+A página usa avaliações reais e uma contagem conferida em 15/09/2026, com data visível.
+O endpoint `/api/reviews` consulta somente a nota e a quantidade do Jesus Salon na
+API Google Business Profile. O cache dura até uma hora. Os depoimentos selecionados
+não são trocados automaticamente. Não há coleta de avaliações por scraping.
+
+A integração só fica ativa após configurar no Vercel, como variáveis sensíveis de
+servidor: `GOOGLE_CLIENT_ID`, `GOOGLE_CLIENT_SECRET`, `GOOGLE_REFRESH_TOKEN`.
+Usar o projeto OAuth aprovado da BNC e uma autorização existente para este perfil,
+com escopo `https://www.googleapis.com/auth/business.manage`. Nunca colocar esses
+valores no HTML, JavaScript do navegador ou GitHub. Fazer novo deploy após configurá-los.
+
+Sem credenciais ou em falha do Google, o endpoint retorna 503 e o site mantém o
+registro datado, sem afirmar que está atualizado em tempo real. Para validar a
+ativação, `/api/reviews` deve retornar HTTP 200, `available: true`, `rating`, `count`
+e `updatedAt`; verificar a data na página. A implementação não comprova recebimento
+da conversão no painel Google Ads; isso requer teste no Tag Assistant/conta de Ads.
+
+Pendências externas: confirmar Instagram oficial (o perfil @jesussalon consultado
+não identifica o salão), Meta Pixel específico, credenciais Google para a integração
+e atualizar o site no Google Business Profile, ainda apontado ao Carrd no levantamento.
