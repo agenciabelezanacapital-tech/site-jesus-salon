@@ -18,22 +18,13 @@ Feita em **HTML5 + CSS3 + JavaScript puro** (sem frameworks). Para visualizar, b
 
 ## ✏️ Como editar (o essencial)
 
-### 1) Trocar o número de WhatsApp e a mensagem
-Abra `script.js` e edite as **duas primeiras variáveis** no topo:
+### 1) Trocar o número de WhatsApp e as mensagens
+Abra `script.js`: `WHATSAPP_NUMERO` define o telefone e `WHATSAPP_MENSAGENS` contém as mensagens geral e por serviço. O atributo `data-whatsapp-servico` dos botões em `index.html` seleciona a mensagem; botões sem atributo usam `geral`.
 
-```js
-const WHATSAPP_NUMERO   = "5561994431731"; // país (55) + DDD (61) + número
-const WHATSAPP_MENSAGEM = "Olá, vi seus serviços e quero mais informações.";
-```
+A conversão do Google Ads continua registrada somente no clique em `.js-whatsapp`, com o mesmo identificador de evento.
 
-Pronto — **todos** os botões da página (hero, serviços, rodapé, botão flutuante, etc.) são atualizados automaticamente.
-
-### 2) Trocar os textos dos serviços e depoimentos
-Abra `index.html` e procure os comentários em maiúsculas:
-
-- **Serviços:** procure por `TROQUE OS TEXTOS DOS SERVIÇOS`. Edite o título (`<h3>`) e a descrição (`<p>`) de cada card.
-- **Depoimentos:** procure por `TROQUE OS DEPOIMENTOS`. Edite o texto entre `<p>...</p>` e o nome da cliente em `<footer>`.
-- **Headline do topo:** procure por `TROQUE O TEXTO DA HEADLINE`.
+### 2) Textos e depoimentos
+Os serviços e o título ficam em `index.html`. Os depoimentos provisórios foram retirados; publique apenas depoimentos reais autorizados. Os links sociais sem destino confirmado também foram retirados.
 
 ### 3) Trocar as fotos
 Crie uma pasta `assets/` e coloque suas imagens nela. No `index.html`, procure pelos comentários `Insira sua foto aqui` / `FOTO DE DESTAQUE` / `GALERIA DE FOTOS` e substitua cada `<div class="photo-placeholder">` por uma tag de imagem, por exemplo:
@@ -58,7 +49,7 @@ Dimensões recomendadas:
 
 - **Endereço / horário:** no `index.html`, seção `Localização` (procure por `id="localizacao"`).
 - **Mapa do Google:** na mesma seção, troque o `src` do `<iframe>` pelo código "Incorporar um mapa" do Google Maps.
-- **Redes sociais:** no rodapé, troque os `href="#"` dos links Instagram/Facebook.
+- **Redes sociais:** adicionar somente depois de confirmar os perfis oficiais.
 - **Domínio (SEO):** ao publicar, troque `https://www.jesussalon.com.br/` pelo domínio real em `index.html` (tags canonical/OG e JSON-LD), `robots.txt` e `sitemap.xml`.
 
 ---

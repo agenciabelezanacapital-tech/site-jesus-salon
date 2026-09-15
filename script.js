@@ -7,14 +7,19 @@
    -------------------------------------------------------------------------
    • WHATSAPP_NUMERO: número no formato internacional, somente dígitos
      (código do país 55 + DDD 61 + número). Ex.: 5561994431731
-   • WHATSAPP_MENSAGEM: texto que já vem digitado quando o cliente abre a conversa.
+   • WHATSAPP_MENSAGENS: textos por serviço; o atributo data-whatsapp-servico
+     escolhe a mensagem. Botões sem esse atributo usam a mensagem geral.
    ------------------------------------------------------------------------- */
 const WHATSAPP_NUMERO   = "5561994431731";
-const WHATSAPP_MENSAGEM = "Olá, fiquei interessada e quero agendar um teste de mecha.";
-
-/* Monta o link final do WhatsApp (não precisa editar). */
-const WHATSAPP_LINK =
-  "https://wa.me/" + WHATSAPP_NUMERO + "?text=" + encodeURIComponent(WHATSAPP_MENSAGEM);
+const WHATSAPP_MENSAGENS = {
+  geral: "Olá! Vim pelo site e gostaria de consultar os serviços e horários do Jesus Salon.",
+  mechas: "Olá! Tenho interesse em mechas e gostaria de saber como funciona a avaliação e consultar horários.",
+  morena: "Olá! Tenho interesse em morena iluminada e gostaria de saber como funciona a avaliação e consultar horários.",
+  corte: "Olá! Gostaria de consultar valores e horários para um corte de cabelo.",
+  tratamento: "Olá! Gostaria de conversar sobre tratamentos para o meu cabelo e consultar horários.",
+  finalizacao: "Olá! Gostaria de consultar as opções de finalização e os horários disponíveis.",
+  iluminacao: "Olá! Tenho interesse em iluminação capilar e gostaria de consultar as opções e horários."
+};
 
 /* -------------------------------------------------------------------------
    📊 CONVERSÃO DO GOOGLE ADS (CLIQUE WPP)
@@ -40,7 +45,10 @@ function reportarConversaoWhatsApp() {
    garante abertura em nova aba com segurança e registra a conversão no clique.
    ------------------------------------------------------------------------- */
 document.querySelectorAll(".js-whatsapp").forEach(function (el) {
-  el.setAttribute("href", WHATSAPP_LINK);
+  const servico = el.getAttribute("data-whatsapp-servico") || "geral";
+  const mensagem = WHATSAPP_MENSAGENS[servico] || WHATSAPP_MENSAGENS.geral;
+  const link = "https://wa.me/" + WHATSAPP_NUMERO + "?text=" + encodeURIComponent(mensagem);
+  el.setAttribute("href", link);
   el.setAttribute("target", "_blank");
   el.setAttribute("rel", "noopener");
   el.addEventListener("click", reportarConversaoWhatsApp);
