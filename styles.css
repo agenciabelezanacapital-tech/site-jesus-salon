@@ -625,3 +625,58 @@ em { font-style: italic; color: var(--dourado); }
 
 .review-update { text-align:center; margin:24px auto 0; font-size:.8rem; color:var(--texto-suave); }
 .testimonial small { display:block; margin-top:8px; }
+
+/* ---------- Perguntas frequentes ---------- */
+.faq-list {
+  max-width: 820px;
+  margin: 0 auto;
+  display: grid;
+  gap: 0.75rem;
+}
+
+.faq-item {
+  border: 1px solid rgba(0, 0, 0, 0.08);
+  border-radius: 12px;
+  background: #fff;
+  padding: 0 1.25rem;
+  transition: border-color 0.2s ease, box-shadow 0.2s ease;
+}
+
+.faq-item[open] {
+  border-color: rgba(0, 0, 0, 0.16);
+  box-shadow: 0 6px 24px rgba(0, 0, 0, 0.06);
+}
+
+.faq-item summary {
+  cursor: pointer;
+  list-style: none;
+  padding: 1.15rem 2rem 1.15rem 0;
+  font-weight: 500;
+  font-size: 1.02rem;
+  position: relative;
+}
+
+.faq-item summary::-webkit-details-marker { display: none; }
+
+.faq-item summary::after {
+  content: "+";
+  position: absolute;
+  right: 0;
+  top: 50%;
+  transform: translateY(-50%);
+  font-size: 1.4rem;
+  line-height: 1;
+  opacity: 0.55;
+  transition: transform 0.2s ease;
+}
+
+.faq-item[open] summary::after {
+  content: "–";
+}
+
+.faq-item p {
+  margin: 0;
+  padding: 0 0 1.25rem;
+  opacity: 0.8;
+  line-height: 1.65;
+}
