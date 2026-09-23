@@ -1,0 +1,72 @@
+/* ---------- Páginas de serviço ---------- */
+.migalhas {
+  font-size: 0.85rem;
+  opacity: 0.65;
+  margin-bottom: 1.25rem;
+}
+
+.migalhas a { color: inherit; text-decoration: none; border-bottom: 1px solid currentColor; }
+.migalhas span[aria-hidden] { margin: 0 0.4rem; }
+
+.pagina-servico-hero {
+  padding-top: clamp(6rem, 12vw, 9rem);
+}
+
+.pagina-servico-hero h1 {
+  font-size: clamp(2rem, 5vw, 3.2rem);
+  line-height: 1.12;
+  margin: 0.4rem 0 1rem;
+  max-width: 16ch;
+}
+
+.pagina-servico-hero .lead {
+  max-width: 62ch;
+  font-size: clamp(1rem, 1.6vw, 1.12rem);
+  line-height: 1.7;
+  opacity: 0.82;
+  margin-bottom: 2rem;
+}
+
+.conteudo-servico {
+  max-width: 760px;
+}
+
+.conteudo-servico h2 {
+  font-size: clamp(1.4rem, 3vw, 1.9rem);
+  margin: 2.5rem 0 0.9rem;
+}
+
+.conteudo-servico h2:first-child { margin-top: 0; }
+
+.conteudo-servico p {
+  line-height: 1.75;
+  opacity: 0.85;
+  margin: 0 0 1.05rem;
+}
+
+.conteudo-servico a { color: inherit; }
+
+.galeria-servico {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(210px, 1fr));
+  gap: 1rem;
+}
+
+.galeria-item {
+  margin: 0;
+  border-radius: 14px;
+  overflow: hidden;
+  aspect-ratio: 3 / 4;
+}
+
+.galeria-item img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+}
+
+@media (max-width: 700px) {
+  .galeria-servico { grid-template-columns: repeat(2, 1fr); }
+  .pagina-servico-hero h1 { max-width: none; }
+}
